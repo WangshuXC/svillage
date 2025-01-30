@@ -14,7 +14,10 @@ export function Navbar({ className }: { className?: string }) {
         className
       )}
     >
-      <Link href={"/"} className="flex p-2 items-center justify-start">
+      <Link
+        href={"/"}
+        className="flex p-2 items-center justify-start rounded-md hover:shadow-[0_6px_20px_rgba(93,93,93,23%)] transition duration-200 ease-linear"
+      >
         <Image
           src="/logo.png"
           alt="logo"
@@ -25,8 +28,21 @@ export function Navbar({ className }: { className?: string }) {
         生存者之乡
       </Link>
       <Menu setActive={setActive}>
+        <MenuItem setActive={setActive} active={active} item="首页">
+          <div onClick={() => setActive(null)}>
+            <ProductItem
+              title="首页"
+              href="/"
+              src="/homepage.jpg"
+              description="生存者之乡服务器"
+            />
+          </div>
+        </MenuItem>
         <MenuItem setActive={setActive} active={active} item="生存者服务器">
-          <div className="text-sm grid grid-cols-2 gap-10 p-4" onClick={()=>setActive(null)}>
+          <div
+            className="text-sm grid grid-cols-2 gap-10 p-4"
+            onClick={() => setActive(null)}
+          >
             <ProductItem
               title="原乡"
               href="/sur"
@@ -45,11 +61,13 @@ export function Navbar({ className }: { className?: string }) {
               src="/joy.jpg"
               description="乐事挑战亦畅行，冒险之乐伴君程"
             />
-            <HoveredLink href="/">回到首页</HoveredLink>
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="实验性功能">
-          <div className="flex flex-col space-y-4 text-sm" onClick={()=>setActive(null)}>
+          <div
+            className="flex flex-col space-y-4 text-sm"
+            onClick={() => setActive(null)}
+          >
             <HoveredLink href="/">生存者商店</HoveredLink>
             <HoveredLink href="/">玩家社区</HoveredLink>
             <HoveredLink href="/">喝杯咖啡</HoveredLink>
