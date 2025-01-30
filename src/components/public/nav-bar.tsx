@@ -10,24 +10,24 @@ export function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed top-0 inset-x-0 w-screen mx-auto z-50 flex flex-row items-center justify-between h-20 px-10",
+        "fixed top-0 inset-x-0 w-screen mx-auto z-50 flex flex-row items-center justify-between h-20 px-10 bg-gray-500 bg-opacity-55 text-white text-lg",
         className
       )}
     >
       <Link
         href={"/"}
-        className="flex p-2 items-center justify-start rounded-md hover:shadow-[0_6px_20px_rgba(93,93,93,23%)] transition duration-200 ease-linear"
+        className="flex p-2 items-center justify-start text-4xl rounded-md hover:shadow-[0_6px_20px_rgba(93,93,93,23%)] transition duration-200 ease-linear"
       >
         <Image
           src="/logo.png"
           alt="logo"
-          width={20}
-          height={20}
+          width={40}
+          height={40}
           className="mr-4"
         />
         生存者之乡
       </Link>
-      <Menu setActive={setActive}>
+      <Menu setActive={setActive} className=" absolute left-1/2 -translate-x-1/2">
         <MenuItem setActive={setActive} active={active} item="首页">
           <div onClick={() => setActive(null)}>
             <ProductItem
