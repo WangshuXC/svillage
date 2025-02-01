@@ -67,7 +67,6 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
   };
 
   const { imageSrc, button, href, title } = slide;
-  console.log(imageSrc)
 
   return (
     <div className="[perspective:1200px] [transform-style:preserve-3d]">

@@ -1,5 +1,6 @@
 "use client";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import VideoList from "@/components/public/videos-list";
 import { Carousel } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
@@ -41,7 +42,7 @@ export default function Home() {
           animate={{ opacity: 1, scale: 1, y: -130 }}
           className={cn(
             "text-9xl mb-10 font-bold",
-            "bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-yellow-400 to-red-200 [text-shadow:0_0_rgba(0,0,0,0.1)]"
+            "bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-yellow-400 to-green-200 [text-shadow:0_0_rgba(0,0,0,0.1)]"
           )}
         >
           生存者之乡
@@ -53,7 +54,7 @@ export default function Home() {
           transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
           className="absolute bottom-10 text-4xl text-white cursor-pointer w-20 h-20"
           onClick={() => {
-            window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+            window.scrollTo({ top: window.innerHeight + 20, behavior: 'smooth' });
           }}
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-full h-full">
@@ -62,6 +63,7 @@ export default function Home() {
           </svg>
         </motion.div>
       </section>
+      <VideoList />
       <section className="h-screen w-screen relative overflow-hidden flex flex-col items-center justify-center">
         {/* 背景层 */}
         <div
