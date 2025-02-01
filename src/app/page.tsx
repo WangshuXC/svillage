@@ -62,7 +62,11 @@ export default function Home() {
           </svg>
         </motion.div>
       </section>
-      <section className="h-screen w-screen overflow-hidden flex flex-col items-center justify-center">
+      <section className="h-screen w-screen relative overflow-hidden flex flex-col items-center justify-center">
+        {/* 背景层 */}
+        <div
+          className="absolute inset-0 bg-[url('/homepage.jpg')] bg-cover bg-center blur-sm"
+        />
         <Carousel slides={slideData} />
       </section>
     </div>
