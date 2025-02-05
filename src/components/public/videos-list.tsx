@@ -12,7 +12,7 @@ export default function VideoList() {
             "Content-Type": "application/json",
         },
         method: 'GET',
-        mode: 'no-cors',
+        // mode: 'no-cors',
       })
       if (res.ok) {
         const data = await res.json();
